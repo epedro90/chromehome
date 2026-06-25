@@ -1,51 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
   <head>
-    <title>PedroHome</title>
-    <link rel="icon" type="image/x-icon" href="fav.ico" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+    <meta name="color-scheme" content="dark" />
+    <title>Pedro Home</title>
+    <link rel="icon" type="image/x-icon" href="fav.ico" />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="main-container">
-      <div id="title-container">
-        <h1>Pedro Home</h1>
-        <br />
-        <div class="quote">
-          <div class="line"></div>
-          <i>
-            <h3>"There must be some kind of way outta here...</h3>
-            <h3>said the joker to the thief"</h3></i
-          >
-          <div class="line"></div>
+    <main class="shell">
+      <header class="topbar" aria-label="Informazioni pagina">
+        <div>
+          <p class="eyebrow" id="greeting">Ciao Pedro</p>
+          <h1>Pedro Home</h1>
         </div>
-        <div class="avatar">
-          <img src="pedro.jpg" class="avatar_image" />
+        <time class="clock" id="clock" datetime="">
+          <span id="time">--:--</span>
+          <span id="date">--</span>
+        </time>
+      </header>
+
+      <section class="hero" aria-labelledby="home-title">
+        <img class="avatar" src="pedro.jpg" alt="Pedro" />
+        <div class="intro">
+          <h2 id="home-title">"There must be some kind of way outta here..."</h2>
+          <p>said the joker to the thief</p>
         </div>
-      </div>
-      <div id="search-container">
-        <form id="search-form">
-          <input type="text" id="search-input" placeholder="Search Google" autofocus />
-          <button type="submit" id="search-button">Search</button>
+
+        <form class="search" id="search-form" role="search">
+          <label class="sr-only" for="search-input">Cerca su Google</label>
+          <span class="search-icon" aria-hidden="true">/</span>
+          <input type="text" id="search-input" placeholder="Cerca sul web o usa yt, maps, mail..." autocomplete="off" autofocus />
+          <button type="submit" id="search-button">Cerca</button>
         </form>
-      </div>
-      <div class="card-container">
-        <a class="card card1" href="https://mail.google.com/"><span>Gmail</span></a>
-        <a class="card card9" href="https://www.google.com/maps"><span>Gmaps</span></a>
-        <a class="card card2" href="https://keep.google.com/"><span>Keep</span></a>
-        <a class="card card3" href="https://www.twitch.tv/"><span>Twitch</span></a>
-        <a class="card card4" href="https://www.youtube.com/"><span>YouTube</span></a>
-      </div>
-      <div class="card-container">
-        <a class="card card5" href="https://chat.openai.com/"><span>ChatGPT</span></a>
-        <a class="card card6" href="https://intranet.makeitalia.com/"><span>Makeitalia</span></a>
-        <a class="card card7" href="https://intranet.oltresolutions.it/"><span>Oltresolutions</span></a>
-        <a class="card card8" href="https://gitlab.oltresolutions.it/"><span>Gitlab</span></a>
-      </div>
-    </div>
+      </section>
+
+      <section class="weather" aria-labelledby="weather-title">
+        <div class="weather-heading">
+          <div>
+            <p class="eyebrow">Meteo</p>
+            <h2 id="weather-title">Oggi e prossimi 5 giorni</h2>
+          </div>
+          <span id="weather-location">Meteo locale</span>
+        </div>
+        <div class="weather-grid" id="weather-grid">
+          <div class="weather-state">Caricamento meteo...</div>
+        </div>
+      </section>
+
+      <section class="shortcuts" aria-label="Collegamenti rapidi">
+        <div class="shortcut-group">
+          <h3>Google</h3>
+          <div class="shortcut-grid">
+            <a class="shortcut gmail" href="https://mail.google.com/" data-key="1">
+              <span class="key">1</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 6.5h18v11H3z" /><path d="m3 7 9 6.5L21 7" /></svg>
+              </span>
+              <span>Gmail</span>
+            </a>
+            <a class="shortcut maps" href="https://www.google.com/maps" data-key="2">
+              <span class="key">2</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s6-5.4 6-11a6 6 0 0 0-12 0c0 5.6 6 11 6 11Z" /><circle cx="12" cy="10" r="2.4" /></svg>
+              </span>
+              <span>Maps</span>
+            </a>
+            <a class="shortcut keep" href="https://keep.google.com/" data-key="3">
+              <span class="key">3</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z" /><path d="M15 3v4h4" /><path d="M10 11h4M10 15h4" /></svg>
+              </span>
+              <span>Keep</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="shortcut-group">
+          <h3>Media</h3>
+          <div class="shortcut-grid">
+            <a class="shortcut youtube" href="https://www.youtube.com/" data-key="4">
+              <span class="key">4</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="4" /><path d="m10 9 5 3-5 3z" /></svg>
+              </span>
+              <span>YouTube</span>
+            </a>
+            <a class="shortcut twitch" href="https://www.twitch.tv/" data-key="5">
+              <span class="key">5</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 4h15v10l-4 4h-4l-3 3v-3H5z" /><path d="M10 9v4M15 9v4" /></svg>
+              </span>
+              <span>Twitch</span>
+            </a>
+            <a class="shortcut instagram" href="https://www.instagram.com/" data-key="6">
+              <span class="key">6</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3.2" /><circle cx="16.5" cy="7.5" r="1" /></svg>
+              </span>
+              <span>Instagram</span>
+            </a>
+            <a class="shortcut tiktok" href="https://www.tiktok.com/" data-key="7">
+              <span class="key">7</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M14 4v10.5a4 4 0 1 1-3-3.9" /><path d="M14 4c.8 2.8 2.5 4.2 5 4.6" /></svg>
+              </span>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="shortcut-group">
+          <h3>AI</h3>
+          <div class="shortcut-grid">
+            <a class="shortcut chatgpt" href="https://chat.openai.com/" data-key="8">
+              <span class="key">8</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5.4A4 4 0 0 1 15 4a4 4 0 0 1 4 5.8A4 4 0 0 1 16 17a4 4 0 0 1-7 1.6A4 4 0 0 1 5 12a4 4 0 0 1 3-6.6Z" /><path d="M8 9.2 12 7l4 2.2v5.6L12 17l-4-2.2Z" /></svg>
+              </span>
+              <span>ChatGPT</span>
+            </a>
+            <a class="shortcut claude" href="https://claude.ai/" data-key="9">
+              <span class="key">9</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17.5 6.5A7 7 0 1 0 18 17" /><path d="M14.5 9 18 12l-3.5 3" /></svg>
+              </span>
+              <span>Claude</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="shortcut-group">
+          <h3>Work</h3>
+          <div class="shortcut-grid">
+            <a class="shortcut oltre" href="https://intranet.oltresolutions.it/" data-key="o">
+              <span class="key">O</span>
+              <span class="icon">O</span>
+              <span>Oltresolutions</span>
+            </a>
+            <a class="shortcut make" href="https://intranet.makeitalia.com/" data-key="m">
+              <span class="key">M</span>
+              <span class="icon">MI</span>
+              <span>Makeitalia</span>
+            </a>
+            <a class="shortcut gitlab" href="https://gitlab.oltresolutions.it/" data-key="g">
+              <span class="key">G</span>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m12 20 8-5.7-2.3-8-3.2 5.2h-5L6.3 6.3 4 14.3z" /></svg>
+              </span>
+              <span>GitLab</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
