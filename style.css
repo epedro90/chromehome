@@ -142,6 +142,32 @@ h1 {
   letter-spacing: 0;
 }
 
+.quote-title {
+  max-width: 760px;
+  position: relative;
+  color: #fffaf0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 3.8vw, 3.35rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.14;
+  text-shadow: 0 3px 26px rgba(0, 0, 0, 0.62);
+}
+
+.quote-title::before {
+  width: 74px;
+  height: 2px;
+  margin-bottom: 18px;
+  display: block;
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 250, 240, 0.86), rgba(121, 199, 255, 0.28));
+  border-radius: 999px;
+}
+
+.intro h2 span {
+  display: block;
+}
+
 .intro p {
   max-width: 620px;
   margin-bottom: 0;
